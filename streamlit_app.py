@@ -8,12 +8,12 @@ import streamlit as st
 
 st.set_page_config(page_title='Azure Eventuhub simulator', layout = 'wide', initial_sidebar_state = 'auto')
 
-num_devices = st.slider("Number of devices to simulate", min_value=1,max_value=100, value=10, step=1);
-shared_access_key_name = st.text_input("Shared access key name", value="RootManageSharedAccessKey");
-shared_access_key_value = st.text_input("Shared access key value", type="password", );
-service_namespace = st.text_input("Service name", value="");
-hub_name = st.text_input("Hub name", value="");
-sleep_time=st.slider("Sleep time",min_value=0.01,max_value=1.00,step=0.01, value=0.01)
+num_devices = st.slider("Number of devices to simulate:", min_value=1,max_value=100, value=10, step=1);
+shared_access_key_name = st.text_input("Shared access key name:", value="RootManageSharedAccessKey");
+shared_access_key_value = st.text_input("Shared access key value:", type="password", );
+service_namespace = st.text_input("Service name:", value="");
+hub_name = st.text_input("Hub name:", value="");
+sleep_time=st.slider("Sleep time:",min_value=0.01,max_value=1.00,step=0.01, value=0.01)
 
 
 if st.button("Start simulation"):
