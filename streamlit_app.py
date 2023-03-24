@@ -14,13 +14,14 @@ shared_access_key_value = st.text_input("Shared access key value", type="passwor
 service_namespace = st.text_input("Service name", value="");
 hub_name = st.text_input("Hub name", value="");
 sleep_time=st.slider("Sleep time",min_value=0.01,max_value=1.00,step=0.01, value=0.01)
-sbs = ServiceBusService(service_namespace,
-                        shared_access_key_name=shared_access_key_name,
-                        shared_access_key_value=shared_access_key_value)
+
 
 if st.button("Start simulation"):
     while True:
         try:
+            sbs = ServiceBusService(service_namespace,
+                        shared_access_key_name=shared_access_key_name,
+                        shared_access_key_value=shared_access_key_value)
             msg = {}
             is_error = choice([True, False])
             device_id = randrange(1, num_devices)
